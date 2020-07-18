@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Édition: {{ propriete.nom }}{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="main mt-2">
+            <h1>Édition de la propriété {{ propriete.nom }}</h1>
+            {{ include('pages/admin/formTemplate.html.twig')}}
+        </div>
+    </div>
+{% endblock %}

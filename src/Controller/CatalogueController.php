@@ -2,12 +2,14 @@
 namespace App\Controller;
 
 
+use App\Entity\Adresse;
 use App\Entity\Propriete;
 use App\Repository\ProprieteRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+
 
 class CatalogueController extends AbstractController {
 
@@ -31,19 +33,37 @@ class CatalogueController extends AbstractController {
      *
      */
     public function display(): Response{
-        //Test de l'instanciation d'une propriété
-        /*
-        $propriete = new Propriete();
-        $propriete->setNom('Villa Dora');
-        $propriete->setDescription('Appartement orienté plein Sud.');
-        $propriete->setNbPieces(4);
-        $propriete->setNbChambres(2);
-        $propriete->setSurface(75);
-        $propriete->setEtage(3);
-        $propriete->setPrix(200000);
+        $faker = \Faker\Factory::create('fr_FR');
+
+        //Création d'adresses
+        for( $i = 0; $i <3; $i++) {
+            $adresse = new Adresse();
+            $adresse->setCodePostal(str_replace(' ', '', $faker->postcode));
+            $adresse->setRue($faker->streetAddress);
+            $adresse->setVille($faker->city);
+
+            //Invocation de l'EntityManager
+            $this->entityManager->persist($adresse);
+
+            for ($j = 0; $j < 3; $j++) {
+                //Test de l'instanciation d'une propriété
+                $propriete = new Propriete();
+                $propriete->setNom($faker->company);
+                $propriete->setDescription($faker->paragraph);
+                $propriete->setNbPieces($faker->numberBetween(1, 6));
+                $propriete->setNbChambres($faker->numberBetween(1, $propriete->getNbPieces()));
+                $propriete->setSurface(rand(25, 220));
+                $propriete->setEtage(rand(1, 12));
+                $propriete->setPrix(rand(9000, 1500000));
+                $propriete->setAdresse($adresse);
+
+                //Invocation de l'EntityManager
+                $this->entityManager->persist($propriete);
+            }
+        }
+
 
         //Invocation de l'EntityManager
-        $this->entityManager->persist($propriete);
         $this->entityManager->flush();
 
         //Test de l'entityManager

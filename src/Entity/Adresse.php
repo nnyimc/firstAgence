@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\AdresseRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -31,6 +33,16 @@ class Adresse
      * @ORM\Column(type="string", length=5)
      */
     private $codePostal;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Propriete::class, mappedBy="adresse")
+     */
+    private $proprietes;
+
+    public function __construct()
+    {
+        $this->proprietes = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -71,5 +83,44 @@ class Adresse
         $this->codePostal = $codePostal;
 
         return $this;
+    }
+
+    /**
+     * @return Collection|Propriete[]
+     */
+    public function getProprietes(): Collection
+    {
+        return $this->proprietes;
+    }
+
+    public function addPropriete(Propriete $propriete): self
+    {
+        if (!$this->proprietes->contains($propriete)) {
+            $this->proprietes[] = $propriete;
+            $propriete->setAdresse($this);
+        }
+
+        return $this;
+    }
+
+    public function removePropriete(Propriete $propriete): self
+    {
+        if ($this->proprietes->contains($propriete)) {
+            $this->proprietes->removeElement($propriete);
+            // set the owning side to null (unless already changed)
+            if ($propriete->getAdresse() === $this) {
+                $propriete->setAdresse(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /** Indispensable pour designer l'objet Adresse en tant que champ d'un formulaire
+     * @return string
+     */
+    public function __toString()
+    {
+        return (string) $this->getRue() . " " . $this->getCodePostal() . " " .$this->getVille();
     }
 }

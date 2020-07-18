@@ -1,0 +1,24 @@
+<div class="col-md-10">
+    {{ form_start(form) }}
+
+    <div class="row">
+        <div class="col-md-3">{{ form_row(form.vendue)}} </div>
+        <div class="col-md-3">{{ form_row(form.nom)}} </div>
+        <div class="col-md-4">{{ form_row(form.prix)}} </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">{{ form_row(form.surface)}} </div>
+        <div class="col-md-3">{{ form_row(form.nbPieces)}} </div>
+        <div class="col-md-3">{{ form_row(form.nbChambres)}} </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3">{{ form_row(form.etage)}} </div>
+        <div class="col-md-7">{{ form_row(form.adresse) }}</div>
+    </div>
+
+    {{ form_widget(form) }}
+    <button class="btn btn-primary">{{ button | default('Enregistrer')}}</button>
+    {{ form_end(form) }}
+</div>

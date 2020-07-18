@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Gérer les propriétés {% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="main mt-2">
+            <h1>Propriétés publiées</h1>
+        </div>
+
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th colspan="3">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for propriete in proprietes  %}
+                <tr>
+                    <td>{{ propriete.nom }}</td>
+                    <td>
+                        <a href="{{ path('admin.catalogue.edit', {id: propriete.id}) }}" class="btn btn-secondary">Éditer</a>
+                    </td>
+                    <td>
+                        <a href="{{ path('admin.catalogue.new') }}" class="btn btn-secondary">Ajouter</a>
+                    </td>
+                    <td>
+                        <form method="POST" action="{{ path('admin.catalogue.delete', {id: propriete.id}) }}" accept-charset="UTF-8"
+                         onsubmit="return confirm('Confirmez-vous la suppression ?')">
+                            <input type="hidden" name="method" value="DELETE"/>
+                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ propriete.id) }}"/>
+                            <button class="btn btn-danger">Supprimer</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+{% endblock %}

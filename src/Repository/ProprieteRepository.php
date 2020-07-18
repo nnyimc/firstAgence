@@ -36,7 +36,7 @@ class ProprieteRepository extends ServiceEntityRepository
     public function findNewestItems():array {
         return $this->findUnsoldItems()
             ->orderBy('p.dateAjout', 'DESC')
-            ->setMaxResults(5)
+            ->setMaxResults(4)
             ->getQuery()
             ->getResult()
             ;

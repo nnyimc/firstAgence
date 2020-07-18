@@ -63,6 +63,12 @@ class Propriete
      */
     private $prix;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Adresse::class, inversedBy="proprietes")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $adresse;
+
 
     public function __construct() {
         $this->setDateAjout( new \DateTime());
@@ -186,6 +192,17 @@ class Propriete
     {
         $this->prix = $prix;
 
+        return $this;
+    }
+
+    public function getAdresse(): ?Adresse
+    {
+        return $this->adresse;
+    }
+
+    public function setAdresse(?Adresse $adresse): self
+    {
+        $this->adresse = $adresse;
         return $this;
     }
 

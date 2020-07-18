@@ -1,7 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="5c24f817-b3fb-4ef0-a5b8-bb98f4e18b1e" name="Default Changelist" comment="" />
+    <list default="true" id="5c24f817-b3fb-4ef0-a5b8-bb98f4e18b1e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Controller/Admin/AdminCatalogueController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/pages/admin/catalogue.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/pages/admin/edit.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/pages/admin/formTemplate.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/pages/admin/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/firstAgence.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/firstAgence.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20200717213208.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CatalogueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CatalogueController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Adresse.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Adresse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Propriete.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Propriete.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ProprieteRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ProprieteRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,6 +48,9 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/templates/css/main.css" root0="FORCE_HIGHLIGHTING" />
@@ -118,9 +159,15 @@
       <path value="$PROJECT_DIR$/vendor/symfony/property-access" />
       <path value="$PROJECT_DIR$/vendor/symfony/maker-bundle" />
       <path value="$PROJECT_DIR$/vendor/cocur/slugify" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
+      <path value="$PROJECT_DIR$/vendor/fzaninotto/faker" />
     </include_path>
   </component>
   <component name="ProjectId" id="1ep0DYsn3rN9uoPXE4cYHycUgAW" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -148,25 +195,53 @@
       <workItem from="1595003110316" duration="15355000" />
       <workItem from="1595024991122" duration="68000" />
       <workItem from="1595025579232" duration="1833000" />
-      <workItem from="1595027967068" duration="11980000" />
+      <workItem from="1595027967068" duration="12434000" />
+      <workItem from="1595080464753" duration="33213000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
     <state x="399" y="221" width="604" height="350" key="#Notifications" timestamp="1595025058716">
       <screen x="47" y="27" width="1319" height="741" />
     </state>
     <state x="399" y="221" width="604" height="350" key="#Notifications/47.27.1319.741@47.27.1319.741" timestamp="1595025058716" />
+    <state x="473" y="100" width="739" height="594" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1595081183953">
+      <screen x="47" y="27" width="1319" height="741" />
+    </state>
+    <state x="473" y="100" width="739" height="594" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/47.27.1319.741@47.27.1319.741" timestamp="1595081183953" />
     <state x="489" y="154" width="424" height="484" key="FileChooserDialogImpl" timestamp="1595003255020">
       <screen x="47" y="27" width="1319" height="741" />
     </state>
     <state x="489" y="154" width="424" height="484" key="FileChooserDialogImpl/47.27.1319.741@47.27.1319.741" timestamp="1595003255020" />
-    <state x="502" y="322" width="399" height="149" key="NewPhpFileDialog" timestamp="1595008629761">
+    <state x="498" y="317" key="Github.CreateGistDialog" timestamp="1595040296320">
       <screen x="47" y="27" width="1319" height="741" />
     </state>
-    <state x="502" y="322" width="399" height="149" key="NewPhpFileDialog/47.27.1319.741@47.27.1319.741" timestamp="1595008629761" />
+    <state x="498" y="317" key="Github.CreateGistDialog/47.27.1319.741@47.27.1319.741" timestamp="1595040296320" />
+    <state x="555" y="296" key="Github.ShareDialog" timestamp="1595040336323">
+      <screen x="47" y="27" width="1319" height="741" />
+    </state>
+    <state x="555" y="296" key="Github.ShareDialog/47.27.1319.741@47.27.1319.741" timestamp="1595040336323" />
+    <state x="502" y="322" width="399" height="149" key="NewPhpFileDialog" timestamp="1595090404382">
+      <screen x="47" y="27" width="1319" height="741" />
+    </state>
+    <state x="502" y="322" width="399" height="149" key="NewPhpFileDialog/47.27.1319.741@47.27.1319.741" timestamp="1595090404382" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1595106444915">
+      <screen x="47" y="27" width="1319" height="741" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/47.27.1319.741@47.27.1319.741" timestamp="1595106444915" />
   </component>
 </project>
