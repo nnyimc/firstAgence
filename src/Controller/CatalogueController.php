@@ -51,9 +51,9 @@ class CatalogueController extends AbstractController {
                 $propriete->setNom($faker->company);
                 $propriete->setDescription($faker->paragraph);
                 $propriete->setNbPieces($faker->numberBetween(1, 6));
-                $propriete->setNbChambres($faker->numberBetween(1, $propriete->getNbPieces()));
+                $propriete->setNbChambres($faker->numberBetween(1,4));
                 $propriete->setSurface(rand(25, 220));
-                $propriete->setEtage(rand(1, 12));
+                $propriete->setEtage(rand(0, 12));
                 $propriete->setPrix(rand(9000, 1500000));
                 $propriete->setAdresse($adresse);
 

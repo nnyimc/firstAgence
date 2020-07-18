@@ -5,9 +5,12 @@ namespace App\Entity;
 use App\Repository\ProprieteRepository;
 use Doctrine\ORM\Mapping as ORM;
 use Cocur\Slugify\Slugify;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ProprieteRepository", repositoryClass=ProprieteRepository::class)
+ * @UniqueEntity("nom")
  */
 class Propriete
 {
@@ -20,31 +23,37 @@ class Propriete
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(min=3)
      */
     private $nom;
 
     /**
      * @ORM\Column(type="string", length=500)
+     * @Assert\Length(min=15)
      */
     private $description;
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\Range(min=25, max=220)
      */
     private $surface;
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\Range (min=1, max=6)
      */
     private $nbPieces;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @Assert\Range (min=0, max=12)
      */
     private $etage;
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\Range (min=1, max=4)
      */
     private $nbChambres;
 
@@ -60,6 +69,7 @@ class Propriete
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\Range (min=9000, max=1500000)
      */
     private $prix;
 
