@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="jumbotron">
+        <h1>Bienvenue dans la firstAgence !!</h1>
+    </div>
+    <div class="container mt-2">
+        <div class="main">
+            <h2>Les derniers biens</h2>
+            <div class="row flex">
+                {%  for propriete in proprietes %}
+                    <div class="col-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                   <a href="{{ path('catalogue.showPropriete', {id: propriete.id, slug:propriete.slug }) }}">{{ propriete.nom }}</a>
+                                </h4>
+                                <p class="card-text">
+                                    {{ propriete.surface }} m²
+                                </p>
+                                <p class="card-text">
+                                    {{ propriete.nbPieces }} pièces
+                                </p>
+                                <div class="card-text">
+                                    {{ propriete.PrixFormate }} €
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor  %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

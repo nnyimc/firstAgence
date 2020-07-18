@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ propriete.nom }}
+{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-8">
+
+            </div>
+            <div class="col-md-4">
+                <h1>{{ propriete.nom }}</h1>
+                <h2>{{ propriete.nbPieces }} pièces - {{ propriete.surface }} m²</h2>
+                <h3 class="text-primary">
+                    {{ propriete.PrixFormate }} €
+                </h3>
+                <a href="" class="btn btn-primary">Contacter l'agence</a>
+            </div>
+            <div class="col-md-12">
+
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <table class="table table-striped text-center">
+                        <thead>{{ propriete.description | nl2br }}</thead>
+                        <tbody>
+                        <tr>
+                            <th>Surface habitable</th>
+                            <th>Nombre de pièces</th>
+                            <th>Nombre de chambres</th>
+                            {% if propriete.etage %}<th>Numéro d'étage</th>{% endif %}
+                        </tr>
+                        <tr>
+                            <td>{{ propriete.surface }} m²</td>
+
+                            <td>{{ propriete.nbPieces }}
+                                {% if propriete.nbPieces > 1 %} pièces
+                                {% elseif propriete.nbPieces == 1%} pièce
+                                {% endif %}
+                            </td>
+
+                            <td>{{ propriete.nbChambres }}
+                                {% if propriete.nbChambres > 1 %} chambres
+                                {% elseif propriete.nbChambres == 1%} chambre
+                                {% endif %}
+                            </td>
+                            {% if propriete.etage %}<td>{{ propriete.etage }}</td>{% endif %}
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-4">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+

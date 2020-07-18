@@ -1,0 +1,6 @@
+#nom donné au Controller --> index
+
+home:
+  path: /
+  controller: App\Controller\HomeController::index
+
