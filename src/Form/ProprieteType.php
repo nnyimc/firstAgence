@@ -13,6 +13,7 @@ class ProprieteType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('adresse',AdresseType::class)
             ->add('nom')
             ->add('description', TextareaType::class)
             ->add('surface')
@@ -21,7 +22,6 @@ class ProprieteType extends AbstractType
             ->add('nbChambres')
             ->add('vendue')
             ->add('prix')
-            ->add('adresse')
         ;
     }
 

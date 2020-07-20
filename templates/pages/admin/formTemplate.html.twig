@@ -1,24 +1,26 @@
 <div class="col-md-10">
-    {{ form_start(form) }}
+    {{ form_start(formPropriete) }}
 
     <div class="row">
-        <div class="col-md-3">{{ form_row(form.vendue)}} </div>
-        <div class="col-md-3">{{ form_row(form.nom)}} </div>
-        <div class="col-md-4">{{ form_row(form.prix)}} </div>
+        <div class="col-md-3">{{ form_row(formPropriete.vendue)}} </div>
+        <div class="col-md-3">{{ form_row(formPropriete.nom)}} </div>
+        <div class="col-md-4">{{ form_row(formPropriete.prix)}} </div>
     </div>
 
     <div class="row">
-        <div class="col-md-4">{{ form_row(form.surface)}} </div>
-        <div class="col-md-3">{{ form_row(form.nbPieces)}} </div>
-        <div class="col-md-3">{{ form_row(form.nbChambres)}} </div>
+        <div class="col-md-3">{{ form_row(formPropriete.adresse.rue)}} </div>
+        <div class="col-md-3">{{ form_row(formPropriete.adresse.codePostal)}} </div>
+        <div class="col-md-4">{{ form_row(formPropriete.adresse.ville)}} </div>
     </div>
 
     <div class="row">
-        <div class="col-md-3">{{ form_row(form.etage)}} </div>
-        <div class="col-md-7">{{ form_row(form.adresse) }}</div>
+        <div class="col-md-2">{{ form_row(formPropriete.surface)}} </div>
+        <div class="col-md-3">{{ form_row(formPropriete.nbPieces)}} </div>
+        <div class="col-md-3">{{ form_row(formPropriete.nbChambres)}} </div>
+        <div class="col-md-2">{{ form_row(formPropriete.etage)}} </div>
     </div>
 
-    {{ form_widget(form) }}
+    {{ form_widget(formPropriete) }}
     <button class="btn btn-primary">{{ button | default('Enregistrer')}}</button>
-    {{ form_end(form) }}
+    {{ form_end(formPropriete) }}
 </div>

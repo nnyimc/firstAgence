@@ -74,6 +74,8 @@ class Propriete
     private $prix;
 
     /**
+     * @Assert\Type(type="App\Entity\Adresse")
+     * @Assert\Valid
      * @ORM\ManyToOne(targetEntity=Adresse::class, inversedBy="proprietes")
      * @ORM\JoinColumn(nullable=false)
      */

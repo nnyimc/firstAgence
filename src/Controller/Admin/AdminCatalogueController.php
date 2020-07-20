@@ -3,6 +3,7 @@ namespace  App\Controller\Admin;
 
 use App\Entity\Adresse;
 use App\Entity\Propriete;
+use App\Form\AdresseType;
 use App\Form\ProprieteType;
 use App\Repository\ProprieteRepository;
 
@@ -48,10 +49,11 @@ class AdminCatalogueController extends AbstractController
      */
     public function edit(Propriete $propriete, Request $request): Response
     {
-        $form = $this->createForm(ProprieteType::class, $propriete);
-        $form->handleRequest($request);
+        $formPropriete = $this->createForm(ProprieteType::class, $propriete);
+        $formPropriete->handleRequest($request);
 
-        if($form->isSubmitted() && $form-> isValid()) {
+        if($formPropriete->isSubmitted() && $formPropriete-> isValid()) {
+            $this->entityManager->persist($propriete);
             $this->entityManager->flush();
             $this->addFlash('success','Propriété modifiée avec succès !');
             $this->proprietes = $this->listerProprietes();
@@ -62,7 +64,7 @@ class AdminCatalogueController extends AbstractController
 
         return $this->render('pages/admin/edit.html.twig', [
             'propriete' => $propriete,
-            'form' => $form->createView()
+            'formPropriete' => $formPropriete->createView()
         ]);
     }
 
@@ -74,19 +76,15 @@ class AdminCatalogueController extends AbstractController
      */
     public function new(Request $request): Response
     {
-        $adresse = new Adresse();
         $propriete = new Propriete();
-        $propriete->setAdresse($adresse);
-        $this->entityManager->persist($propriete);
-        $form = $this->createForm(ProprieteType::class, $propriete);
-        $form->handleRequest($request);
-
+        $formPropriete = $this->createForm(ProprieteType::class, $propriete);
+        $formPropriete->handleRequest($request);
         return $this->render('pages/admin/new.html.twig', [
             'propriete' => $propriete,
-            'form' => $form->createView()
+            'formPropriete' => $formPropriete->createView($formPropriete->createView())
         ]);
 
-        if( $form->isSubmitted() && $form->isValid()) {
+        if( $formPropriete->isSubmitted() && $formPropriete->isValid()) {
             $this->entityManager->persist($propriete);
             $this->entityManager->flush();
             $this->addFlash('success','Propriété ajoutée avec succès !');

@@ -21,9 +21,10 @@
   <component name="ChangeListManager">
     <list default="true" id="5c24f817-b3fb-4ef0-a5b8-bb98f4e18b1e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CatalogueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CatalogueController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Adresse.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Adresse.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/AdminCatalogueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/AdminCatalogueController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Propriete.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Propriete.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ProprieteType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ProprieteType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/admin/formTemplate.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/admin/formTemplate.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +182,8 @@
       <workItem from="1595024991122" duration="68000" />
       <workItem from="1595025579232" duration="1833000" />
       <workItem from="1595027967068" duration="12434000" />
-      <workItem from="1595080464753" duration="35197000" />
+      <workItem from="1595080464753" duration="36375000" />
+      <workItem from="1595194212334" duration="8285000" />
     </task>
     <servers />
   </component>
@@ -198,12 +200,17 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="399" y="221" width="604" height="350" key="#Notifications" timestamp="1595025058716">
       <screen x="47" y="27" width="1319" height="741" />
     </state>
     <state x="399" y="221" width="604" height="350" key="#Notifications/47.27.1319.741@47.27.1319.741" timestamp="1595025058716" />
+    <state x="301" y="81" width="800" height="630" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1595200753134">
+      <screen x="47" y="27" width="1319" height="741" />
+    </state>
+    <state x="301" y="81" width="800" height="630" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/47.27.1319.741@47.27.1319.741" timestamp="1595200753134" />
     <state x="473" y="100" width="739" height="594" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1595081183953">
       <screen x="47" y="27" width="1319" height="741" />
     </state>
@@ -228,9 +235,9 @@
       <screen x="47" y="27" width="1319" height="741" />
     </state>
     <state width="498" height="446" key="SwitcherDM/47.27.1319.741@47.27.1319.741" timestamp="1595106444915" />
-    <state x="301" y="132" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1595114829431">
+    <state x="301" y="132" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1595116229850">
       <screen x="47" y="27" width="1319" height="741" />
     </state>
-    <state x="301" y="132" width="800" height="528" key="Vcs.Push.Dialog.v2/47.27.1319.741@47.27.1319.741" timestamp="1595114829431" />
+    <state x="301" y="132" width="800" height="528" key="Vcs.Push.Dialog.v2/47.27.1319.741@47.27.1319.741" timestamp="1595116229850" />
   </component>
 </project>
