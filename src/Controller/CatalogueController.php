@@ -1,12 +1,12 @@
 <?php
 namespace App\Controller;
 
-
-use App\Entity\Adresse;
 use App\Entity\Propriete;
 use App\Repository\ProprieteRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -18,61 +18,19 @@ class CatalogueController extends AbstractController {
      */
     private $proprieteRepository;
 
-    /**
-     * @var EntityManagerInterface
-     */
-    private $entityManager;
-
-    public function __construct(ProprieteRepository $proprieteRepository, EntityManagerInterface $entityManager) {
+    public function __construct(ProprieteRepository $proprieteRepository) {
         $this->proprieteRepository = $proprieteRepository;
-        $this->entityManager = $entityManager;
     }
 
     /**
      * @Route("/catalogue", name="catalogue")
      * @return Response
      */
-    public function display(): Response
+    public function display(PaginatorInterface $paginator, Request $request): Response
     {
-        $faker = \Faker\Factory::create('fr_FR');
-
-        //Création d'adresses
-        for( $i = 0; $i <3; $i++) {
-            $adresse = new Adresse();
-            $adresse->setCodePostal(str_replace(' ', '', $faker->postcode));
-            $adresse->setRue($faker->streetAddress);
-            $adresse->setVille($faker->city);
-
-            //Invocation de l'EntityManager
-            $this->entityManager->persist($adresse);
-
-            for ($j = 0; $j < 3; $j++) {
-                //Test de l'instanciation d'une propriété
-                $propriete = new Propriete();
-                $propriete->setNom($faker->company);
-                $propriete->setDescription($faker->paragraph);
-                $propriete->setNbPieces($faker->numberBetween(1, 6));
-                $propriete->setNbChambres($faker->numberBetween(1,4));
-                $propriete->setSurface(rand(25, 220));
-                $propriete->setEtage(rand(0, 12));
-                $propriete->setPrix(rand(9000, 1500000));
-                $propriete->setAdresse($adresse);
-
-                //Invocation de l'EntityManager
-                $this->entityManager->persist($propriete);
-            }
-        }
-        $proprietes = $this->proprieteRepository->findAll();
-
-        //Invocation de l'EntityManager
-        $this->entityManager->flush();
-
-        //Test de l'entityManager
-        /*
-        $proprieteArray = $this->proprieteRepository->findAllNotSold();
-        $proprieteArray[0]->setVendue(true);
-        $this->entityManager->flush();
-        */
+        $proprietes = $paginator->paginate($this->proprieteRepository->findAllNotSoldQuery(),
+                                            $request->query->getInt( 'page', 1 ),
+                                            16);
 
         // Renvoi de la template pour la page catalogue.html
         return $this->render('pages/catalogue.html.twig', [
@@ -80,16 +38,28 @@ class CatalogueController extends AbstractController {
             'proprietes' =>$proprietes
         ]);
 
-
     }
 
     /**
      * @Route("/catalogue/{slug}-{id}", name = "catalogue.showPropriete", requirements={"slug": "[a-z0-9\-]*"})
+     * @param Propriete $propriete
+     * @param $slug
      * @return Response
      */
-    public function showPropriete($slug, $id): Response
+    public function showPropriete(Propriete $propriete, $slug): Response
     {
-        $propriete = $this->proprieteRepository->find($id);
+        //Créer une entité équivalente à une recherche
+        //Créer un formulaire
+        //Gérer le traitement en modifiant le comportement de la fonction
+        if ($propriete->getSlug() !== $slug) {
+            return $this->redirectToRoute('catalogue.showPropriete',
+                [
+                    'id' => $propriete->getId(),
+                     'slug' => $propriete->getSlug()
+                ],
+                301);
+        }
+
         return $this->render('pages/detailPropriete.html.twig',
             [
                 'propriete' => $propriete,

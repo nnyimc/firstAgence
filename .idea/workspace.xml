@@ -20,13 +20,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c24f817-b3fb-4ef0-a5b8-bb98f4e18b1e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller/Security/SecurityController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/pages/security/login.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/packages/knp_paginator.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/pages/_proprietesCards.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/firstAgence.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/firstAgence.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/CatalogueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CatalogueController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ProprieteRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ProprieteRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/admin/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/admin/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/admin/formTemplate.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/admin/_formTemplate.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/admin/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/admin/new.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/pages/catalogue.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/catalogue.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/detailPropriete.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/detailPropriete.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/home.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/home.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +47,13 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -157,6 +175,8 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/data-fixtures" />
       <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-fixtures-bundle" />
       <path value="$PROJECT_DIR$/vendor/fzaninotto/faker" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-components" />
     </include_path>
   </component>
   <component name="ProjectId" id="1ep0DYsn3rN9uoPXE4cYHycUgAW" />
@@ -168,6 +188,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../e-shop" />
@@ -197,7 +218,8 @@
       <workItem from="1595215870519" duration="557000" />
       <workItem from="1595216828664" duration="1666000" />
       <workItem from="1595219214156" duration="41000" />
-      <workItem from="1595220379770" duration="1173000" />
+      <workItem from="1595220379770" duration="1626000" />
+      <workItem from="1595276651290" duration="11100000" />
     </task>
     <servers />
   </component>
@@ -225,14 +247,18 @@
       <screen x="47" y="27" width="1319" height="741" />
     </state>
     <state x="495" y="77" width="412" height="638" key="#com.intellij.ide.util.MemberChooser/47.27.1319.741@47.27.1319.741" timestamp="1595207982399" />
-    <state x="301" y="81" width="800" height="630" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1595200753134">
+    <state x="301" y="81" width="800" height="630" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1595287152313">
       <screen x="47" y="27" width="1319" height="741" />
     </state>
-    <state x="301" y="81" width="800" height="630" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/47.27.1319.741@47.27.1319.741" timestamp="1595200753134" />
-    <state x="473" y="100" width="739" height="594" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1595081183953">
+    <state x="301" y="81" width="800" height="630" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/47.27.1319.741@47.27.1319.741" timestamp="1595287152313" />
+    <state x="473" y="100" width="739" height="594" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1595277553431">
       <screen x="47" y="27" width="1319" height="741" />
     </state>
-    <state x="473" y="100" width="739" height="594" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/47.27.1319.741@47.27.1319.741" timestamp="1595081183953" />
+    <state x="473" y="100" width="739" height="594" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/47.27.1319.741@47.27.1319.741" timestamp="1595277553431" />
+    <state x="439" y="154" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1595277677115">
+      <screen x="47" y="27" width="1319" height="741" />
+    </state>
+    <state x="439" y="154" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/47.27.1319.741@47.27.1319.741" timestamp="1595277677115" />
     <state x="489" y="154" width="424" height="484" key="FileChooserDialogImpl" timestamp="1595003255020">
       <screen x="47" y="27" width="1319" height="741" />
     </state>
@@ -261,9 +287,9 @@
       <screen x="47" y="27" width="1319" height="741" />
     </state>
     <state x="370" y="175" key="run.anything.popup/47.27.1319.741@47.27.1319.741" timestamp="1595214382747" />
-    <state x="369" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1595209672551">
+    <state x="369" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1595282437300">
       <screen x="47" y="27" width="1319" height="741" />
     </state>
-    <state x="369" y="89" width="672" height="678" key="search.everywhere.popup/47.27.1319.741@47.27.1319.741" timestamp="1595209672551" />
+    <state x="369" y="89" width="672" height="678" key="search.everywhere.popup/47.27.1319.741@47.27.1319.741" timestamp="1595282437300" />
   </component>
 </project>

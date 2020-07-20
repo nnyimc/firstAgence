@@ -21,12 +21,12 @@ class ProprieteRepository extends ServiceEntityRepository
     }
 
     /** Cette méthode retourne les propriétés non vendues
-     * @return Propriete[]
+     * @return \Doctrine\ORM\Query
      */
-    public function findAllNotSold():array {
+    public function findAllNotSoldQuery(): \Doctrine\ORM\Query
+    {
         return $this->findUnsoldItems()
             ->getQuery()
-            ->getResult()
             ;
     }
 
