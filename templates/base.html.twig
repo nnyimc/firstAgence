@@ -15,14 +15,26 @@
 
             <div class="collapse navbar-collapse" id="navbarColor02">
                 <ul class="navbar-nav mr-auto">
+
                     <li class="nav-item">
                         <a class="nav-link" {% if current_nav_item is defined and current_nav_item == 'catalogue' %}active{%
                             endif %} href="{{ path('catalogue') }}">Acheter</a>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link">Test</a>
                     </li>
+
+                    {% if app.user %}
+                    <li class="nav-item">
+                        <a href="{{ path('security.logout') }}">
+                            <button class="btn btn-warning"> Déconnexion </button>
+                        </a>
+                    </li>
+                    {% endif %}
+
                 </ul>
+
                 <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="text" placeholder="Search">
                     <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>

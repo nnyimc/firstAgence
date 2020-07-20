@@ -30,9 +30,10 @@ class CatalogueController extends AbstractController {
 
     /**
      * @Route("/catalogue", name="catalogue")
-     *
+     * @return Response
      */
-    public function display(): Response{
+    public function display(): Response
+    {
         $faker = \Faker\Factory::create('fr_FR');
 
         //Création d'adresses
@@ -61,7 +62,7 @@ class CatalogueController extends AbstractController {
                 $this->entityManager->persist($propriete);
             }
         }
-
+        $proprietes = $this->proprieteRepository->findAll();
 
         //Invocation de l'EntityManager
         $this->entityManager->flush();
@@ -75,7 +76,8 @@ class CatalogueController extends AbstractController {
 
         // Renvoi de la template pour la page catalogue.html
         return $this->render('pages/catalogue.html.twig', [
-            'current_nav_item' => 'catalogue'
+            'current_nav_item' => 'catalogue',
+            'proprietes' =>$proprietes
         ]);
 
 

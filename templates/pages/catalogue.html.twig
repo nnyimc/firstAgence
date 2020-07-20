@@ -6,6 +6,28 @@
     <div class="container">
         <div class="main mt-2">
             <h1>Nos propriétés</h1>
+            <div class="row flex">
+                {%  for propriete in proprietes %}
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="card-title">
+                                <a href="{{ path('catalogue.showPropriete', {id: propriete.id, slug:propriete.slug }) }}">
+                                    <h3>{{ propriete.nom }}</h3>
+                                </a>
+                            </div>
+                            <h5 class="card-text">
+                                {{ propriete.surface }} m² - {{ propriete.nbPieces }}
+                                {% if propriete.nbPieces > 1 %}pcs{% elseif propriete.nbPieces == 1 %}pce{% endif %}
+                            </h5>
+                            <p class="card-text">{{ propriete.description }}</p>
+                            <p class="card-text" style="font-weight: bold">{{ propriete.prix }} €</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
         </div>
     </div>
 {% endblock %}

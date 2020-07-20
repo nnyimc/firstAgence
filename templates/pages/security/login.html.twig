@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Authentification {% endblock %}
+
+{% block body %}
+    <div class="container">
+
+
+        <div class="main mt-2 col-md-8">
+           <h1> Authentification </h1>
+
+            {% if erreur %}
+                <div class=" text-center alert alert-dark col-md-6">
+                    <p>Veuillez recommencer après avoir vérifié vos identifiant et mot de passe.</p>
+                </div>
+            {% endif %}
+
+           <form method="POST" accept-charset="UTF-8" action="{{ path('security.login') }}">
+
+               <div class="col-md-6">
+                   <label for="username">Nom d'utilisateur</label>
+                   <input  id="username" name="_username" type="text" class="form-control"
+                           value="{{ dernier_utilisateur }}" required/>
+               </div>
+
+               <div class="col-md-6">
+                   <label for="password">Mot de passe</label>
+                   <input  id="password" name="_password" type="password" class="form-control" required/>
+               </div>
+
+               <input type="submit" class="btn btn-primary mt-4 mb-3" value="connexion"/>
+
+           </form>
+        </div>
+    </div>
+{% endblock %}

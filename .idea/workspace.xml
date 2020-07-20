@@ -20,11 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c24f817-b3fb-4ef0-a5b8-bb98f4e18b1e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Controller/Security/SecurityController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/pages/security/login.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/Admin/AdminCatalogueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/AdminCatalogueController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Propriete.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Propriete.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ProprieteType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ProprieteType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pages/admin/formTemplate.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/admin/formTemplate.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CatalogueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CatalogueController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/catalogue.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/catalogue.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +39,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/nnyimc/firstAgence" />
+      </set>
+    </option>
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/templates/css/main.css" root0="FORCE_HIGHLIGHTING" />
@@ -169,6 +178,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="php.override.implement.member.chooser.php.doc" value="DEFAULT" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -183,7 +193,11 @@
       <workItem from="1595025579232" duration="1833000" />
       <workItem from="1595027967068" duration="12434000" />
       <workItem from="1595080464753" duration="36375000" />
-      <workItem from="1595194212334" duration="8285000" />
+      <workItem from="1595194212334" duration="20143000" />
+      <workItem from="1595215870519" duration="557000" />
+      <workItem from="1595216828664" duration="1666000" />
+      <workItem from="1595219214156" duration="41000" />
+      <workItem from="1595220379770" duration="1173000" />
     </task>
     <servers />
   </component>
@@ -207,6 +221,10 @@
       <screen x="47" y="27" width="1319" height="741" />
     </state>
     <state x="399" y="221" width="604" height="350" key="#Notifications/47.27.1319.741@47.27.1319.741" timestamp="1595025058716" />
+    <state x="495" y="77" width="412" height="638" key="#com.intellij.ide.util.MemberChooser" timestamp="1595207982399">
+      <screen x="47" y="27" width="1319" height="741" />
+    </state>
+    <state x="495" y="77" width="412" height="638" key="#com.intellij.ide.util.MemberChooser/47.27.1319.741@47.27.1319.741" timestamp="1595207982399" />
     <state x="301" y="81" width="800" height="630" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1595200753134">
       <screen x="47" y="27" width="1319" height="741" />
     </state>
@@ -227,17 +245,25 @@
       <screen x="47" y="27" width="1319" height="741" />
     </state>
     <state x="555" y="296" key="Github.ShareDialog/47.27.1319.741@47.27.1319.741" timestamp="1595040336323" />
-    <state x="502" y="322" width="399" height="149" key="NewPhpFileDialog" timestamp="1595090404382">
+    <state x="502" y="322" width="399" height="149" key="NewPhpFileDialog" timestamp="1595208497794">
       <screen x="47" y="27" width="1319" height="741" />
     </state>
-    <state x="502" y="322" width="399" height="149" key="NewPhpFileDialog/47.27.1319.741@47.27.1319.741" timestamp="1595090404382" />
+    <state x="502" y="322" width="399" height="149" key="NewPhpFileDialog/47.27.1319.741@47.27.1319.741" timestamp="1595208497794" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1595106444915">
       <screen x="47" y="27" width="1319" height="741" />
     </state>
     <state width="498" height="446" key="SwitcherDM/47.27.1319.741@47.27.1319.741" timestamp="1595106444915" />
-    <state x="301" y="132" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1595116229850">
+    <state x="301" y="132" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1595203568605">
       <screen x="47" y="27" width="1319" height="741" />
     </state>
-    <state x="301" y="132" width="800" height="528" key="Vcs.Push.Dialog.v2/47.27.1319.741@47.27.1319.741" timestamp="1595116229850" />
+    <state x="301" y="132" width="800" height="528" key="Vcs.Push.Dialog.v2/47.27.1319.741@47.27.1319.741" timestamp="1595203568605" />
+    <state x="370" y="175" key="run.anything.popup" timestamp="1595214382747">
+      <screen x="47" y="27" width="1319" height="741" />
+    </state>
+    <state x="370" y="175" key="run.anything.popup/47.27.1319.741@47.27.1319.741" timestamp="1595214382747" />
+    <state x="369" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1595209672551">
+      <screen x="47" y="27" width="1319" height="741" />
+    </state>
+    <state x="369" y="89" width="672" height="678" key="search.everywhere.popup/47.27.1319.741@47.27.1319.741" timestamp="1595209672551" />
   </component>
 </project>
