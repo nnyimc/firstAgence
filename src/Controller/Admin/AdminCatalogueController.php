@@ -79,10 +79,6 @@ class AdminCatalogueController extends AbstractController
         $propriete = new Propriete();
         $formPropriete = $this->createForm(ProprieteType::class, $propriete);
         $formPropriete->handleRequest($request);
-        return $this->render('pages/admin/new.html.twig', [
-            'propriete' => $propriete,
-            'formPropriete' => $formPropriete->createView($formPropriete->createView())
-        ]);
 
         if( $formPropriete->isSubmitted() && $formPropriete->isValid()) {
             $this->entityManager->persist($propriete);
@@ -93,6 +89,11 @@ class AdminCatalogueController extends AbstractController
                 'proprietes' => $this->proprietes
             ]);
         }
+
+        return $this->render('pages/admin/new.html.twig', [
+            'propriete' => $propriete,
+            'formPropriete' => $formPropriete->createView($formPropriete->createView())
+        ]);
     }
 
     /**

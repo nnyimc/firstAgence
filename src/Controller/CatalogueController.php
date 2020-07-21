@@ -3,7 +3,6 @@ namespace App\Controller;
 
 use App\Entity\Propriete;
 use App\Repository\ProprieteRepository;
-use Doctrine\ORM\EntityManagerInterface;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -22,8 +21,10 @@ class CatalogueController extends AbstractController {
         $this->proprieteRepository = $proprieteRepository;
     }
 
-    /**
+    /** Cette méthode retourne une liste paginée de propriétés disponibles à la vente
      * @Route("/catalogue", name="catalogue")
+     * @param PaginatorInterface $paginator
+     * @param Request $request
      * @return Response
      */
     public function display(PaginatorInterface $paginator, Request $request): Response
@@ -40,7 +41,7 @@ class CatalogueController extends AbstractController {
 
     }
 
-    /**
+    /** Cette fonction retourne les détails d'une propriété
      * @Route("/catalogue/{slug}-{id}", name = "catalogue.showPropriete", requirements={"slug": "[a-z0-9\-]*"})
      * @param Propriete $propriete
      * @param $slug

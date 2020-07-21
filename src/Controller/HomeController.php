@@ -33,7 +33,7 @@
             $this->proprieteRepository = $proprieteRepository;
         }
 
-        /**
+        /** Cette fonction retourne une liste des 4 propriétés les plus récentes
          * @return Response
          * @throws LoaderError
          * @throws RuntimeError
