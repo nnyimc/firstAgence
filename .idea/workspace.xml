@@ -20,11 +20,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c24f817-b3fb-4ef0-a5b8-bb98f4e18b1e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Classes/Recherche.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Recherche.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/translation.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/translation.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Classes/Recherche.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Admin/AdminCatalogueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/AdminCatalogueController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/CatalogueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CatalogueController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/RechercheType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/ProprieteRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ProprieteRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/catalogue.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/catalogue.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,7 +211,7 @@
       <workItem from="1595216828664" duration="1666000" />
       <workItem from="1595219214156" duration="41000" />
       <workItem from="1595220379770" duration="1626000" />
-      <workItem from="1595276651290" duration="17498000" />
+      <workItem from="1595276651290" duration="29653000" />
     </task>
     <servers />
   </component>
@@ -230,10 +235,10 @@
       <screen x="47" y="27" width="1319" height="741" />
     </state>
     <state x="399" y="221" width="604" height="350" key="#Notifications/47.27.1319.741@47.27.1319.741" timestamp="1595025058716" />
-    <state x="495" y="77" width="451" height="638" key="#com.intellij.ide.util.MemberChooser" timestamp="1595297124251">
+    <state x="495" y="77" width="451" height="638" key="#com.intellij.ide.util.MemberChooser" timestamp="1595306334462">
       <screen x="47" y="27" width="1319" height="741" />
     </state>
-    <state x="495" y="77" width="451" height="638" key="#com.intellij.ide.util.MemberChooser/47.27.1319.741@47.27.1319.741" timestamp="1595297124251" />
+    <state x="495" y="77" width="451" height="638" key="#com.intellij.ide.util.MemberChooser/47.27.1319.741@47.27.1319.741" timestamp="1595306334462" />
     <state x="301" y="81" width="800" height="630" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1595287152313">
       <screen x="47" y="27" width="1319" height="741" />
     </state>
@@ -258,10 +263,10 @@
       <screen x="47" y="27" width="1319" height="741" />
     </state>
     <state x="555" y="296" key="Github.ShareDialog/47.27.1319.741@47.27.1319.741" timestamp="1595040336323" />
-    <state x="377" y="116" width="649" height="561" key="NewPhpClassDialog" timestamp="1595295408911">
+    <state x="377" y="116" width="673" height="561" key="NewPhpClassDialog" timestamp="1595306070413">
       <screen x="47" y="27" width="1319" height="741" />
     </state>
-    <state x="377" y="116" width="649" height="561" key="NewPhpClassDialog/47.27.1319.741@47.27.1319.741" timestamp="1595295408911" />
+    <state x="377" y="116" width="673" height="561" key="NewPhpClassDialog/47.27.1319.741@47.27.1319.741" timestamp="1595306070413" />
     <state x="502" y="322" width="399" height="149" key="NewPhpFileDialog" timestamp="1595208497794">
       <screen x="47" y="27" width="1319" height="741" />
     </state>
@@ -270,10 +275,10 @@
       <screen x="47" y="27" width="1319" height="741" />
     </state>
     <state width="498" height="446" key="SwitcherDM/47.27.1319.741@47.27.1319.741" timestamp="1595106444915" />
-    <state x="301" y="132" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1595287903487">
+    <state x="301" y="132" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1595299118767">
       <screen x="47" y="27" width="1319" height="741" />
     </state>
-    <state x="301" y="132" width="800" height="528" key="Vcs.Push.Dialog.v2/47.27.1319.741@47.27.1319.741" timestamp="1595287903487" />
+    <state x="301" y="132" width="800" height="528" key="Vcs.Push.Dialog.v2/47.27.1319.741@47.27.1319.741" timestamp="1595299118767" />
     <state x="370" y="175" key="run.anything.popup" timestamp="1595214382747">
       <screen x="47" y="27" width="1319" height="741" />
     </state>

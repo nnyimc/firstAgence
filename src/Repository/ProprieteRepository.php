@@ -3,7 +3,10 @@
 namespace App\Repository;
 
 use App\Entity\Propriete;
+use App\Entity\Recherche;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\Query;
 use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -20,15 +23,31 @@ class ProprieteRepository extends ServiceEntityRepository
         parent::__construct($registry, Propriete::class);
     }
 
-    /** Cette méthode retourne les propriétés non vendues
-     * @return \Doctrine\ORM\Query
+    /** Cette méthode retourne une requete filtrée qui vise les propriétés non vendues
+     * @param Recherche $recherche
+     * @return Query
      */
-    public function findAllNotSoldQuery(): \Doctrine\ORM\Query
+    public function findAllNotSoldQuery(Recherche $recherche): Query
     {
-        return $this->findUnsoldItems()
-            ->getQuery()
-            ;
+        $requete = $this->findUnsoldItems();
+
+        if ($recherche->getPrixMax()) {
+            $requete = $requete
+                     ->andWhere('p.prix <= :prixMax')
+                     ->setParameter('prixMax', $recherche->getPrixMax() )
+                     ->orderBy('p.prix', 'ASC');
+        }
+
+        if ($recherche->getSurfaceMin()) {
+            $requete = $requete
+                ->andWhere('p.surface >= :surfaceMin')
+                ->setParameter('surfaceMin', $recherche->getSurfaceMin() )
+                ->orderBy('p.surface', 'ASC');
+        }
+
+        return $requete->getQuery();
     }
+
 
     /** Cette méthode retourne les propriétés les plus récentes invendues
      * @return Propriete[]

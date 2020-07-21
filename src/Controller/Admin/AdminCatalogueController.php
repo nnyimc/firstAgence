@@ -1,9 +1,7 @@
 <?php
 namespace  App\Controller\Admin;
 
-use App\Entity\Adresse;
 use App\Entity\Propriete;
-use App\Form\AdresseType;
 use App\Form\ProprieteType;
 use App\Repository\ProprieteRepository;
 
@@ -59,7 +57,7 @@ class AdminCatalogueController extends AbstractController
             $this->proprietes = $this->listerProprietes();
             return $this->redirectToRoute('admin.catalogue', [
                 'proprietes' => $this->proprietes
-            ]);
+            ], 301);
         }
 
         return $this->render('pages/admin/edit.html.twig', [
@@ -85,14 +83,18 @@ class AdminCatalogueController extends AbstractController
             $this->entityManager->flush();
             $this->addFlash('success','Propriété ajoutée avec succès !');
             $this->proprietes = $this->listerProprietes();
-            return $this->redirectToRoute('admin.catalogue', [
-                'proprietes' => $this->proprietes
-            ]);
+            return $this->redirectToRoute(
+                'admin.catalogue',
+                [
+                    'proprietes' => $this->proprietes
+                ],
+                301
+            );
         }
 
         return $this->render('pages/admin/new.html.twig', [
             'propriete' => $propriete,
-            'formPropriete' => $formPropriete->createView($formPropriete->createView())
+            'formPropriete' => $formPropriete->createView()
         ]);
     }
 
@@ -111,9 +113,13 @@ class AdminCatalogueController extends AbstractController
             $this->entityManager->flush();
             $this->addFlash('success','Propriété supprimée avec succès !');
             $this->proprietes = $this->listerProprietes();
-            return $this->redirectToRoute('admin.catalogue', [
-                'proprietes' => $this->proprietes
-            ]);
+            return $this->redirectToRoute(
+                'admin.catalogue',
+                [
+                    'proprietes' => $this->proprietes
+                ],
+                301
+            );
         }
 
     }

@@ -3,6 +3,27 @@
 {% block title %} Nos propriétés {% endblock %}
 
 {% block body %}
+
+    <div class="jumbotron text-center">
+        {{ form_start(form_recherche) }}
+        <div class="form-row">
+
+            <div class="col-md-2 offset-2">
+                {{ form_row(form_recherche.prixMax) }}
+            </div>
+
+            <div class="col-md-2 offset-2">
+                {{ form_row(form_recherche.surfaceMin) }}
+            </div>
+
+            <div class="col">
+                <button class="btn btn-primary">Envoi</button>
+            </div>
+
+        </div>
+        {{ form_end(form_recherche) }}
+    </div>
+
     <div class="container">
         <div class="main mt-2">
             <h1>Nos propriétés</h1>

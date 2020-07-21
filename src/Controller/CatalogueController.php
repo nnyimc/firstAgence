@@ -2,7 +2,10 @@
 namespace App\Controller;
 
 use App\Entity\Propriete;
+use App\Entity\Recherche;
+use App\Form\RechercheType;
 use App\Repository\ProprieteRepository;
+use Doctrine\Common\Collections\ArrayCollection;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -17,26 +20,42 @@ class CatalogueController extends AbstractController {
      */
     private $proprieteRepository;
 
+    /**
+     * @var ArrayCollection
+     */
+    private $proprietes;
+
     public function __construct(ProprieteRepository $proprieteRepository) {
         $this->proprieteRepository = $proprieteRepository;
     }
 
     /** Cette méthode retourne une liste paginée de propriétés disponibles à la vente
      * @Route("/catalogue", name="catalogue")
-     * @param PaginatorInterface $paginator
      * @param Request $request
+     * @param PaginatorInterface $paginator
      * @return Response
      */
-    public function display(PaginatorInterface $paginator, Request $request): Response
+    public function display(
+                             Request $request,
+                             PaginatorInterface $paginator
+                           ): Response
     {
-        $proprietes = $paginator->paginate($this->proprieteRepository->findAllNotSoldQuery(),
-                                            $request->query->getInt( 'page', 1 ),
-                                            16);
+
+        $recherche = new Recherche();
+        $formRecherche = $this->createForm(RechercheType::class, $recherche);
+        $formRecherche->handleRequest($request);
+
+        $this->proprietes = $paginator->paginate(
+                                            $this->proprieteRepository->findAllNotSoldQuery($recherche),
+                                            $request->query->getInt('page', 1),
+                                            16
+                                        );
 
         // Renvoi de la template pour la page catalogue.html
         return $this->render('pages/catalogue.html.twig', [
             'current_nav_item' => 'catalogue',
-            'proprietes' =>$proprietes
+            'proprietes' => $this->proprietes,
+            'form_recherche' =>$formRecherche->createView()
         ]);
 
     }
@@ -49,9 +68,6 @@ class CatalogueController extends AbstractController {
      */
     public function showPropriete(Propriete $propriete, $slug): Response
     {
-        //Créer une entité équivalente à une recherche
-        //Créer un formulaire
-        //Gérer le traitement en modifiant le comportement de la fonction
         if ($propriete->getSlug() !== $slug) {
             return $this->redirectToRoute('catalogue.showPropriete',
                 [
