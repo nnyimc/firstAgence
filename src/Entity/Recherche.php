@@ -4,6 +4,7 @@
 namespace App\Entity;
 
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints as Assert;
 
 class Recherche
@@ -19,6 +20,31 @@ class Recherche
      * @Assert\Range (min=20, max=300)
      */
     private $surfaceMin;
+
+    /**
+     * @var ArrayCollection
+     */
+    private $options;
+
+    public function __construct() {
+        $this->options = new ArrayCollection();
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getOptions(): ArrayCollection
+    {
+        return $this->options;
+    }
+
+    /**
+     * @param ArrayCollection $options
+     */
+    public function setOptions(ArrayCollection $options): void
+    {
+        $this->options = $options;
+    }
 
     /**
      * @return int|null
@@ -53,8 +79,6 @@ class Recherche
     }
 
 
-    public function __construct() {
 
-    }
 
 }

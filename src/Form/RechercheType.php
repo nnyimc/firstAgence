@@ -2,7 +2,9 @@
 
 namespace App\Form;
 
+use App\Entity\OptionPropriete;
 use App\Entity\Recherche;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -26,6 +28,13 @@ class RechercheType extends AbstractType
                 'attr' => [
                     'placeholder' => 'Surface minimale'
                 ]
+            ])
+            ->add('options', EntityType::class, [
+                'required' => false,
+                'label' => false,
+                'class' => OptionPropriete::class,
+                'choice_label' => 'intitule',
+                'multiple' => true
             ])
         ;
     }

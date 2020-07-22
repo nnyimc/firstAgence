@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gérer les options{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="main mt-2">
+            <h1>Options existantes</h1>
+        </div>
+
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success">
+                {{ message }}
+            </div>
+        {% endfor %}
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Nom</th>
+                <th colspan="3">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for option in options  %}
+                <tr>
+                    <td>{{ option.intitule }}</td>
+                    <td>
+                        <a href="{{ path('admin.option.edit', {id: option.id}) }}" class="btn btn-secondary">Éditer</a>
+                    </td>
+                    <td>
+                        <a href="{{ path('admin.option.new') }}" class="btn btn-secondary">Ajouter</a>
+                    </td>
+                    <td>
+                        <form method="POST" action="{{ path('admin.option.delete', {id: option.id}) }}" accept-charset="UTF-8"
+                              onsubmit="return confirm('Confirmez-vous la suppression ?')">
+                            <input type="hidden" name="method" value="DELETE"/>
+                            <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ option.id) }}"/>
+                            <button class="btn btn-danger">Supprimer</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+{% endblock %}

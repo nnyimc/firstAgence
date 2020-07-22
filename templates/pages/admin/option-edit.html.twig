@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Édition: {{ option.intitule }}{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="main mt-2">
+            <h1>Édition de l'option {{ option.intitule }}</h1>
+            {{ include('pages/admin/_formOptionTemplate.html.twig')}}
+        </div>
+    </div>
+{% endblock %}

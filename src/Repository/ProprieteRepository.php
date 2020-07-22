@@ -31,6 +31,18 @@ class ProprieteRepository extends ServiceEntityRepository
     {
         $requete = $this->findUnsoldItems();
 
+        //!! Ne pas mettre d'espaces entre le paramètre et la variable !!
+        if ($recherche->getOptions()->count() > 0) {
+            $k = 0; //Protection contre l'injection de code.
+            foreach($recherche->getOptions() as $k => $option) {
+                $k++;
+                $requete = $requete
+                    ->andWhere(":option$k MEMBER OF p.options")
+                    ->setParameter("option$k", $option);
+            }
+
+        }
+
         if ($recherche->getPrixMax()) {
             $requete = $requete
                      ->andWhere('p.prix <= :prixMax')

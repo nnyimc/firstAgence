@@ -55,6 +55,7 @@ class CatalogueController extends AbstractController {
         return $this->render('pages/catalogue.html.twig', [
             'current_nav_item' => 'catalogue',
             'proprietes' => $this->proprietes,
+            'nb_proprietes_pertinentes' => count($this->proprietes),
             'form_recherche' =>$formRecherche->createView()
         ]);
 

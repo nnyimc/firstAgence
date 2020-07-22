@@ -20,15 +20,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5c24f817-b3fb-4ef0-a5b8-bb98f4e18b1e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Entity/Recherche.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/pages/admin/_formOptionTemplate.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/pages/admin/option-edit.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/pages/admin/option-new.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/pages/admin/options.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/translation.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/translation.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Classes/Recherche.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20200718162221.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/Version20200720011433.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/Admin/AdminCatalogueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/Admin/AdminCatalogueController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/CatalogueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/CatalogueController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/RechercheType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Propriete.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Propriete.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Recherche.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Recherche.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ProprieteType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ProprieteType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/RechercheType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/RechercheType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/ProprieteRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ProprieteRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/admin/_formTemplate.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/admin/_formTemplate.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/admin/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/admin/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/admin/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/admin/new.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/pages/catalogue.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/catalogue.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -183,7 +193,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../e-shop" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/pages" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -192,6 +202,15 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="DEFAULT" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/pages" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/pages/admin" />
+      <recent name="$PROJECT_DIR$/src/Controller/Admin" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -211,7 +230,10 @@
       <workItem from="1595216828664" duration="1666000" />
       <workItem from="1595219214156" duration="41000" />
       <workItem from="1595220379770" duration="1626000" />
-      <workItem from="1595276651290" duration="29653000" />
+      <workItem from="1595276651290" duration="31229000" />
+      <workItem from="1595314904106" duration="1003000" />
+      <workItem from="1595386100079" duration="14000" />
+      <workItem from="1595386149823" duration="31205000" />
     </task>
     <servers />
   </component>
@@ -235,22 +257,22 @@
       <screen x="47" y="27" width="1319" height="741" />
     </state>
     <state x="399" y="221" width="604" height="350" key="#Notifications/47.27.1319.741@47.27.1319.741" timestamp="1595025058716" />
-    <state x="495" y="77" width="451" height="638" key="#com.intellij.ide.util.MemberChooser" timestamp="1595306334462">
+    <state x="495" y="77" width="451" height="638" key="#com.intellij.ide.util.MemberChooser" timestamp="1595414878343">
       <screen x="47" y="27" width="1319" height="741" />
     </state>
-    <state x="495" y="77" width="451" height="638" key="#com.intellij.ide.util.MemberChooser/47.27.1319.741@47.27.1319.741" timestamp="1595306334462" />
-    <state x="301" y="81" width="800" height="630" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1595287152313">
+    <state x="495" y="77" width="451" height="638" key="#com.intellij.ide.util.MemberChooser/47.27.1319.741@47.27.1319.741" timestamp="1595414878343" />
+    <state x="301" y="81" width="800" height="630" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1595386110475">
       <screen x="47" y="27" width="1319" height="741" />
     </state>
-    <state x="301" y="81" width="800" height="630" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/47.27.1319.741@47.27.1319.741" timestamp="1595287152313" />
-    <state x="473" y="100" width="739" height="594" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1595277553431">
+    <state x="301" y="81" width="800" height="630" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/47.27.1319.741@47.27.1319.741" timestamp="1595386110475" />
+    <state x="473" y="100" width="739" height="594" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1595404874912">
       <screen x="47" y="27" width="1319" height="741" />
     </state>
-    <state x="473" y="100" width="739" height="594" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/47.27.1319.741@47.27.1319.741" timestamp="1595277553431" />
-    <state x="439" y="154" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1595277677115">
+    <state x="473" y="100" width="739" height="594" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/47.27.1319.741@47.27.1319.741" timestamp="1595404874912" />
+    <state x="439" y="154" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1595391104375">
       <screen x="47" y="27" width="1319" height="741" />
     </state>
-    <state x="439" y="154" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/47.27.1319.741@47.27.1319.741" timestamp="1595277677115" />
+    <state x="439" y="154" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/47.27.1319.741@47.27.1319.741" timestamp="1595391104375" />
     <state x="489" y="154" width="424" height="484" key="FileChooserDialogImpl" timestamp="1595003255020">
       <screen x="47" y="27" width="1319" height="741" />
     </state>
@@ -271,14 +293,14 @@
       <screen x="47" y="27" width="1319" height="741" />
     </state>
     <state x="502" y="322" width="399" height="149" key="NewPhpFileDialog/47.27.1319.741@47.27.1319.741" timestamp="1595208497794" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1595106444915">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1595409393745">
       <screen x="47" y="27" width="1319" height="741" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/47.27.1319.741@47.27.1319.741" timestamp="1595106444915" />
-    <state x="301" y="132" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1595299118767">
+    <state width="498" height="446" key="SwitcherDM/47.27.1319.741@47.27.1319.741" timestamp="1595409393745" />
+    <state x="301" y="132" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1595312206235">
       <screen x="47" y="27" width="1319" height="741" />
     </state>
-    <state x="301" y="132" width="800" height="528" key="Vcs.Push.Dialog.v2/47.27.1319.741@47.27.1319.741" timestamp="1595299118767" />
+    <state x="301" y="132" width="800" height="528" key="Vcs.Push.Dialog.v2/47.27.1319.741@47.27.1319.741" timestamp="1595312206235" />
     <state x="370" y="175" key="run.anything.popup" timestamp="1595214382747">
       <screen x="47" y="27" width="1319" height="741" />
     </state>

@@ -6,14 +6,18 @@
 
     <div class="jumbotron text-center">
         {{ form_start(form_recherche) }}
-        <div class="form-row">
+        <div class="form-row align-items-end">
 
-            <div class="col-md-2 offset-2">
+            <div class="col-md-2 offset-1">
                 {{ form_row(form_recherche.prixMax) }}
             </div>
 
-            <div class="col-md-2 offset-2">
+            <div class="col-md-2 ">
                 {{ form_row(form_recherche.surfaceMin) }}
+            </div>
+
+            <div class="col-md-4">
+                {{ form_row(form_recherche.options) }}
             </div>
 
             <div class="col">
@@ -37,6 +41,9 @@
                 {{ knp_pagination_render(proprietes) }}
             </div>
 
+            {% if nb_proprietes_pertinentes == 0 %}
+                <p>Aucune propriété ne correspond à votre recherche.</p>
+            {% endif %}
         </div>
     </div>
 {% endblock %}

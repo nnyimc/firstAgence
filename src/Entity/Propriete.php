@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ProprieteRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Cocur\Slugify\Slugify;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
@@ -81,9 +83,15 @@ class Propriete
      */
     private $adresse;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=OptionPropriete::class, inversedBy="proprietes")
+     */
+    private $options;
+
 
     public function __construct() {
         $this->setDateAjout( new \DateTime());
+        $this->options = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -215,6 +223,34 @@ class Propriete
     public function setAdresse(?Adresse $adresse): self
     {
         $this->adresse = $adresse;
+        return $this;
+    }
+
+    /**
+     * @return Collection|OptionPropriete[]
+     */
+    public function getOptions(): Collection
+    {
+        return $this->options;
+    }
+
+    public function addOption(OptionPropriete $option): self
+    {
+        if (!$this->options->contains($option)) {
+            $this->options[] = $option;
+            $option->addPropriete($this);
+        }
+
+        return $this;
+    }
+
+    public function removeOption(OptionPropriete $option): self
+    {
+        if ($this->options->contains($option)) {
+            $this->options->removeElement($option);
+            $option->removePropriete($this);
+        }
+
         return $this;
     }
 

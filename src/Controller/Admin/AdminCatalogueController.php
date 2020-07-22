@@ -47,14 +47,18 @@ class AdminCatalogueController extends AbstractController
      */
     public function edit(Propriete $propriete, Request $request): Response
     {
+
         $formPropriete = $this->createForm(ProprieteType::class, $propriete);
         $formPropriete->handleRequest($request);
 
         if($formPropriete->isSubmitted() && $formPropriete-> isValid()) {
+
             $this->entityManager->persist($propriete);
             $this->entityManager->flush();
+
             $this->addFlash('success','Propriété modifiée avec succès !');
             $this->proprietes = $this->listerProprietes();
+
             return $this->redirectToRoute('admin.catalogue', [
                 'proprietes' => $this->proprietes
             ], 301);
@@ -79,10 +83,13 @@ class AdminCatalogueController extends AbstractController
         $formPropriete->handleRequest($request);
 
         if( $formPropriete->isSubmitted() && $formPropriete->isValid()) {
+
             $this->entityManager->persist($propriete);
             $this->entityManager->flush();
+
             $this->addFlash('success','Propriété ajoutée avec succès !');
             $this->proprietes = $this->listerProprietes();
+
             return $this->redirectToRoute(
                 'admin.catalogue',
                 [
@@ -111,8 +118,10 @@ class AdminCatalogueController extends AbstractController
         {
             $this->entityManager->remove($propriete);
             $this->entityManager->flush();
+
             $this->addFlash('success','Propriété supprimée avec succès !');
             $this->proprietes = $this->listerProprietes();
+
             return $this->redirectToRoute(
                 'admin.catalogue',
                 [
